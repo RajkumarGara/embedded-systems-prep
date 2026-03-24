@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "array_adt.h"
-#include "../utils/utils.h"
+#include "../../utils/utils.h"
 
 void display(struct array arr) 
 {

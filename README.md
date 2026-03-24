@@ -1,44 +1,32 @@
-# dsa-implementation-c-cpp
-A clean collection of data structures and algorithms implemented from scratch in C and C++
+# embedded-systems-prep
 
-## C Concepts Cheatsheets
+Comprehensive embedded systems interview preparation — C core concepts, data structures & algorithms, operating systems, embedded drivers, system design, and more.
 
-The [c-concepts/](c-concepts/) folder contains markdown reference docs covering tricky C/C++ topics for embedded software interview prep and day-to-day work — pointers, const/volatile, operator precedence, undefined behavior, memory layout, bitwise operations, and more.
+## Repository Structure
+
+```
+embedded-systems-prep/
+├── c_core/                     # C language fundamentals (pointers, structs, bitwise, macros, UB)
+├── data_structures_algorithms/ # DSA implementations in C
+├── operating_systems/          # Processes, threads, synchronization, scheduling
+├── embedded_drivers/           # UART, I2C, SPI, CAN, GPIO, ADC, PWM, timers, interrupts
+├── embedded_concepts/          # Memory-mapped I/O, registers, volatile/const, linker scripts
+├── interview_prep/             # Tricky C questions, MCQs, debugging cases
+└── README.md
+```
 
 ## Build
 
 Run all commands from the repository root:
 
 ```sh
-cd dsa-implementation-c-cpp
+make        # build
+make run    # run the default program
+make clean  # clean build artifacts
 ```
 
-Build the current sample program with:
+Run a specific program:
 
 ```sh
-make
-```
-
-Run the default program with:
-
-```sh
-make run
-```
-
-Run one program directly by calling its binary:
-
-```sh
-./arrays/array_adt
-```
-
-Run one specific program through make:
-
-```sh
-make run-one PROGRAM=arrays/array_adt
-```
-
-Clean generated files with:
-
-```sh
-make clean
+make run-one PROGRAM=data_structures_algorithms/data_structures/array_adt
 ```
