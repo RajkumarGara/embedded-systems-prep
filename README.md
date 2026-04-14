@@ -1,14 +1,15 @@
 # embedded-systems-prep
 
-Comprehensive embedded systems preparation — C core concepts, data structures & algorithms, operating systems, embedded drivers, system design, and more.
+Comprehensive embedded systems preparation — C core concepts, C++ interview notes, data structures & algorithms, operating systems, embedded drivers, system design, and more.
 
-The `c_core/` section now keeps its reference docs directly in one folder for faster browsing, including C fundamentals plus focused C++ notes.
+The repo keeps language references split by focus: `c_core/` for C fundamentals and `cpp_core/` for C++ interview-oriented notes and STL references.
 
 ## Repository Structure
 
 ```
 embedded-systems-prep/
-├── c_core/                     # Flat reference docs for C fundamentals and C++ concepts/OOP
+├── c_core/                     # Flat reference docs for C fundamentals and low-level language topics
+├── cpp_core/                   # C++ notes for OA/interview prep, STL, and language-specific refreshers
 ├── data_structures_algorithms/ # DSA implementations in C
 ├── operating_systems/          # Processes, threads, synchronization, scheduling
 ├── embedded_drivers/           # UART, I2C, SPI, CAN, GPIO, ADC, PWM, timers, interrupts

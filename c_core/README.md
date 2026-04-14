@@ -1,6 +1,6 @@
 # C Core — Embedded Developer Cheatsheets
 
-Quick-reference markdown docs covering tricky C/C++ concepts, pitfalls, and patterns for embedded software.
+Quick-reference markdown docs covering tricky C concepts, pitfalls, and patterns for embedded software.
 
 ## Topics
 
@@ -17,13 +17,12 @@ Quick-reference markdown docs covering tricky C/C++ concepts, pitfalls, and patt
 | 9 | [storage-classes.md](storage-classes.md) | `static`, `extern`, `register`, `auto`, linkage rules, scope vs lifetime |
 | 10 | [strings-and-literals.md](strings-and-literals.md) | String literals in read-only memory, `char[]` vs `char*`, common pitfalls |
 | 11 | [type-casting.md](type-casting.md) | Implicit conversions, integer promotion, signed/unsigned pitfalls, pointer casts |
-| 12 | [cpp-oops.md](cpp-oops.md) | Classes, inheritance, polymorphism, abstraction, encapsulation, and C++ OOP examples |
-| 13 | [cpp-concepts.md](cpp-concepts.md) | RAII, references, templates, STL, smart pointers, move semantics, exceptions, and other C++-specific concepts |
 
 ### See also
 
 | # | File | What's Inside |
 |---|------|---------------|
-| 14 | [const-volatile.md](../embedded_concepts/const-volatile.md) | `const` / `volatile` / `restrict` qualifiers, const-correctness patterns |
-| 15 | [embedded-specific.md](../embedded_concepts/embedded-specific.md) | Ring buffers, watchdog use, fixed-point arithmetic, weak symbols, noinit sections, atomics |
-| 16 | [embedded concepts index](../embedded_concepts/README.md) | Central index for boot process, endianness, memory map, registers, and linker script notes |
+| 12 | [const-volatile.md](../embedded_concepts/const-volatile.md) | `const` / `volatile` / `restrict` qualifiers, const-correctness patterns |
+| 13 | [embedded-specific.md](../embedded_concepts/embedded-specific.md) | Ring buffers, watchdog use, fixed-point arithmetic, weak symbols, noinit sections, atomics |
+| 14 | [embedded concepts index](../embedded_concepts/README.md) | Central index for boot process, endianness, memory map, registers, and linker script notes |
+| 15 | [cpp_core index](../cpp_core/README.md) | C++ language notes, OOP refreshers, and STL cheat sheets collected under `cpp_core/` |
