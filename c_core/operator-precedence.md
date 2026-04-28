@@ -74,11 +74,11 @@ From **highest** to **lowest** precedence:
 | 7 | `==` `!=` |  | Equality |
 | 8 | `&` |  | Bitwise AND |
 | 9 | `^` |  | Bitwise XOR |
-| 10 | <code>|</code> |  | Bitwise OR |
+| 10 | `\|` |  | Bitwise OR |
 | 11 | `&&` |  | Logical AND |
-| 12 | <code>||</code> |  | Logical OR |
+| 12 | `\|\|` |  | Logical OR |
 | 13 | `?:` | Right to left | Conditional |
-| 14 | `=` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `&=` `^=` <code>|=</code> | Right to left | Assignment |
+| 14 | `=` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `&=` `^=` `\|=` | Right to left | Assignment |
 | 15 | `,` |  | Comma |
 
 **Remember:** precedence decides grouping, associativity decides direction when operators share the same precedence.
