@@ -59,27 +59,29 @@ int val = *++ptr;
 
 ---
 
-## Precedence Table (Most Common Operators)
+## Precedence Table
 
 From **highest** to **lowest** precedence:
 
-| Precedence | Operators | Associativity | Description |
+| Level | Operators | Associativity | Description |
 |---|---|---|---|
-| 1 | `()` `[]` `->` `.` `++`(post) `--`(post) | Left→Right | Postfix |
-| 2 | `++`(pre) `--`(pre) `+`(unary) `-`(unary) `!` `~` `*`(deref) `&`(addr) `sizeof` `(type)` | Right→Left | Unary / Prefix |
-| 3 | `*` `/` `%` | Left→Right | Multiplicative |
-| 4 | `+` `-` | Left→Right | Additive |
-| 5 | `<<` `>>` | Left→Right | Bitwise shift |
-| 6 | `<` `<=` `>` `>=` | Left→Right | Relational |
-| 7 | `==` `!=` | Left→Right | Equality |
-| 8 | `&` | Left→Right | Bitwise AND |
-| 9 | `^` | Left→Right | Bitwise XOR |
-| 10 | `\|` | Left→Right | Bitwise OR |
-| 11 | `&&` | Left→Right | Logical AND |
-| 12 | `\|\|` | Left→Right | Logical OR |
-| 13 | `?:` | Right→Left | Ternary |
-| 14 | `=` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `&=` `^=` `\|=` | Right→Left | Assignment |
-| 15 | `,` | Left→Right | Comma |
+| 1 | `()` `[]` `.` `->` `x++` `x--` |  | Postfix |
+| 2 | Unary: `+` `-` `++x` `--x` `!` `~` `*` `&` `sizeof` `(type)` | Right to left | Unary / prefix |
+| 3 | `*` `/` `%` |  | Multiplicative |
+| 4 | `+` `-` |  | Additive |
+| 5 | `<<` `>>` |  | Shift |
+| 6 | `<` `<=` `>` `>=` |  | Relational |
+| 7 | `==` `!=` |  | Equality |
+| 8 | `&` |  | Bitwise AND |
+| 9 | `^` |  | Bitwise XOR |
+| 10 | `|` |  | Bitwise OR |
+| 11 | `&&` |  | Logical AND |
+| 12 | `||` |  | Logical OR |
+| 13 | `?:` | Right to left | Conditional |
+| 14 | `=` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `&=` `^=` `|=` | Right to left | Assignment |
+| 15 | `,` |  | Comma |
+
+**Remember:** precedence decides grouping, associativity decides direction when operators share the same precedence.
 
 ---
 
