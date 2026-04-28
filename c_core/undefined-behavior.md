@@ -34,14 +34,23 @@ When your code triggers UB, the compiler is free to:
 
 ## Classic UB Examples
 
-### Example 1: `i = i++ + ++i`
+### Example 1: Unsequenced modifications with `+`
 
 ```c
 int i = 0;
-i = i++ + ++i;  // UNDEFINED BEHAVIOR
+int x;
+
+x = i++ + i++;  // UNDEFINED BEHAVIOR
+x = i++ + ++i;  // UNDEFINED BEHAVIOR
+x = ++i + ++i;  // UNDEFINED BEHAVIOR
+x = ++i + i++;  // UNDEFINED BEHAVIOR
 ```
 
-**Why:** `i` is modified three times (`i++`, `++i`, and `i = ...`) between two sequence points. The standard says nothing about which modification happens first.
+**Why:** All of these modify `i` more than once in the same full expression, with no sequencing between the left and right operands of `+`.
+
+`+` does **not** create a sequence point or impose ordering between its operands. The compiler may evaluate the left operand first or the right operand first, and those side effects are unsequenced relative to each other.
+
+**Rule of thumb:** An expression is UB if a variable is modified more than once in the same full expression, or if it is modified and also read in an unsequenced way.
 
 Different compilers, or even different optimization levels, may produce different results.
 
@@ -54,13 +63,14 @@ printf("%d %d %d", x, x++, ++x);  // UNDEFINED BEHAVIOR
 
 **Why:** The order in which function arguments are evaluated is **unspecified**. The compiler can evaluate `x`, `x++`, and `++x` in any order. Combined with multiple modifications to `x`, this is UB.
 
-### Example 3: Multiple modifications
+### Example 3: Read and modification without sequencing
 
 ```c
-int a = 5;
-a = a++ + a++;  // UNDEFINED BEHAVIOR
-// Could be 10, 11, 12, or anything
+int i = 0;
+i = i++;  // UNDEFINED BEHAVIOR
 ```
+
+**Why:** `i++` both reads and modifies `i`, and the assignment also modifies `i` in the same full expression. Those operations are unsequenced relative to each other, so the behavior is undefined.
 
 ### Example 4: Array subscript
 

@@ -17,10 +17,16 @@ char a = 10, b = 20;
 // a + b: both promoted to int, result is int
 int result = a + b;  // operations happen in int
 
+int shifted = (char)1 << 8;
+// (char)1 is promoted to int before <<
+// so this is really: ((int)1) << 8 = 256
+
 uint8_t x = 200, y = 100;
 uint8_t z = x + y;  // x and y promoted to int: 200 + 100 = 300
                      // 300 truncated to uint8_t: 300 - 256 = 44
 ```
+
+Before most arithmetic, relational, and bitwise operations, operands of small integer types such as `char`, `signed char`, `unsigned char`, `short`, and `uint8_t` are automatically promoted to `int` (or `unsigned int`).
 
 ### Usual Arithmetic Conversions (Balancing)
 
@@ -37,6 +43,15 @@ long
 unsigned int
 int           ←  (everything below is promoted to at least int)
 ```
+
+This also affects division:
+
+```c
+5 / 2;    // integer division -> 2
+5.0 / 2;  // floating-point division -> 2.5
+```
+
+If both operands are integers, the result is integer division. If either operand is floating-point, the other is converted and floating-point division is used.
 
 ---
 
